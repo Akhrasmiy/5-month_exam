@@ -1,0 +1,59 @@
+.App {
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.mainelem{
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #bbabab;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+.Login {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.Login.dark {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.Head{
+  background: #d1b7b7;
+  height: 20vh;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+.headMain{
+  background: #7e778e;
+  width: 70%;
+}
+.Contents{
+ height: 80vh;
+ background: #877676;
+ overflow-y: auto;
+}
+.Nav{
+  width: 5%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius:20px ;
+  background-color: red;
+  height: 100vh;
+}
+.navvscontent{
+  height: 100%;
+  width: 95vw;
+}
+

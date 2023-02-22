@@ -1,0 +1,14 @@
+{
+    "en": {
+      "translation": {
+        "SayHello": "Welcome to React and react-i18next",
+        "salom":"en"
+      }
+    }, 
+    "uz":{
+      "translation":{
+        "SayHello": "salom",
+        "salom":"uz"
+      }
+    }
+  }
