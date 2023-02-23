@@ -11,7 +11,7 @@ function OneContent() {
   const [state, setState] = useState("")
   const [update, setupdate] = useState("12")
   const email = localStorage.getItem("email")
-
+  const token = localStorage.getItem("Token")
   useEffect(() => {
     axios
       .get(`http://167.235.158.238:3001/invoices/${id}`)
@@ -19,9 +19,9 @@ function OneContent() {
         setState(response.data)
       })
   }, [update])
-function trash(){
-  alert("delete un api yoq ekan")
-}
+  function trash() {
+    alert("delete un api yoq ekan")
+  }
 
   console.log(state);
   return (
@@ -31,26 +31,32 @@ function trash(){
         style={{
           width: 800,
         }}
-        
+
         actions={[
-          <div onClick={()=>trash()}><DeleteOutlined key="delete" /></div>,
-          <div onClick={()=>{
+          <div onClick={() => {
+            if (!token) {
+              navigate("/login")
+            }
+            trash()
+          }}><DeleteOutlined key="delete" /></div>,
+          <div onClick={() => {
+            
             navigate(`/editcontent/${id}`)
-           }}><EditOutlined key="edit" /></div>,
-          
+          }}><EditOutlined key="edit" /></div>,
+
           <p onClick={() => { navigate(-1) }}>back</p>
         ]}
       >
         <div>
-         <div><strong>to: {state.to}</strong></div>
-         <div  style={{display:'flex',justifyContent:'space-between'}}>
-         <p><strong>description: </strong>{state.description} </p>
-         <p><strong>price: </strong>{state.price}</p>
-         <p><strong>term: </strong>{state.term}</p>
-         <p><strong>CreateDate: </strong>{state.createdDate}</p>
-         <p><strong>Email: </strong>{email}</p>
-         <p></p>
-         </div>
+          <div><strong>to: {state.to}</strong></div>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <p><strong>description: </strong>{state.description} </p>
+            <p><strong>price: </strong>{state.price}</p>
+            <p><strong>term: </strong>{state.term}</p>
+            <p><strong>CreateDate: </strong>{state.createdDate}</p>
+            <p><strong>Email: </strong>{email}</p>
+            <p></p>
+          </div>
         </div>
       </Card>
     </div>

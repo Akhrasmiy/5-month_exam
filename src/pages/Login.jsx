@@ -21,7 +21,7 @@ function Login() {
             localStorage.setItem("userId",response.data.user.id)
             console.log(response.data.user.email);
             localStorage.setItem("email",response.data.user.email)
-            navigate("/")
+            navigate(-2)
            
         } catch (error) {
             console.log(error);

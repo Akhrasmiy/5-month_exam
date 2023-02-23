@@ -1,6 +1,6 @@
 import { UserOutlined, UserAddOutlined } from '@ant-design/icons';
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, } from 'react-router-dom';
 const token = localStorage.getItem("Token")
 function Nav() {
   const navigate = useNavigate()
@@ -10,6 +10,7 @@ function Nav() {
         ?
         <div onClick={()=>{
           localStorage.setItem("Token","")
+          window.location.reload()
         }}>
           <p className='loginbormi'><UserOutlined /></p>
           outLogin
@@ -17,6 +18,7 @@ function Nav() {
         :
         <div onClick={() => {
           navigate("/login")
+          window.location.reload()
         }}><p className='loginbormi'><UserAddOutlined /></p>
           login</div>
 

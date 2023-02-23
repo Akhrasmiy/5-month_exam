@@ -35,7 +35,9 @@ function Editcontent() {
                 setState(response.data)
             })
     }, [update])
-
+    if (!token) {
+        navigate("/login")
+    }
     const [formValues, setFormValues] = useState({});
 
     const onFinish = (values) => {

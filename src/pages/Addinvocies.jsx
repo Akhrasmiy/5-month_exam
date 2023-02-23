@@ -48,6 +48,10 @@ const Addelem = () => {
   const priceref = useRef(null)
   const dateref = useRef(null)
   const navigate = useNavigate()
+
+  if (!token) {
+    navigate("/login")
+  }
   function abbos(data) {
     console.log(data)
     const src = "http://167.235.158.238:3001/invoices"
