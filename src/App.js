@@ -10,6 +10,7 @@ import ErrorPage from './pages/ErrorPage';
 import OneContent from './layout/oneContent';
 import SignIn from './pages/Login';
 import Addelem from './pages/Addinvocies';
+import Editcontent from './pages/editcontent';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="about" element={<About/>} />
         <Route path="addelem" element={<Addelem/>} />
         <Route path="/content/:id" element={<OneContent />} />
+        <Route path="/editContent/:id" element={<Editcontent />} />
         <Route path="/login" element={<SignIn />} />
 
         <Route path="*" element={<ErrorPage/>} />

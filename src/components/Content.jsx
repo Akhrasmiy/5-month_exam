@@ -22,6 +22,7 @@ const MainElem = (props) => {
 
   const { t } = useTranslation()
   const changePageOnecontent =(id)=>{
+    
     navigate(`/content/${id}`)
   }
   
